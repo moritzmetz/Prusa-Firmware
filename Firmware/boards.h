@@ -7,7 +7,7 @@
 #define BOARD_RAMBO             301  // Rambo
 #define BOARD_RAMBO_MINI_1_3    302  // Rambo-mini 1.3
 #define BOARD_RAMBO_MINI_1_0    102  // Rambo-mini 1.0
-
+#define BOARD_GT2560_REV_A      256  // Geeetech GT2560 Rev. A PLUS - ADDED BY METZWERK
 
 #define BOARD_99                99   // This is in pins.h but...?
 
