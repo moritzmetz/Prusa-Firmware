@@ -36,6 +36,7 @@ AXIS SETTINGS
 #ifdef SNMM
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,140}
 #else
+//so war es #define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,161.3}
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,161.3}
 #endif
 
@@ -43,7 +44,7 @@ AXIS SETTINGS
 // Endstop inverting
 const bool X_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
 const bool Y_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
-const bool Z_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
+const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 
 // Home position
 #define MANUAL_X_HOME_POS 0
@@ -77,7 +78,7 @@ const bool Z_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define DEFAULT_RETRACT_ACCELERATION  1500   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 
-#define MANUAL_FEEDRATE {3000, 3000, 1000, 100}   // set the speeds for manual moves (mm/min)
+#define MANUAL_FEEDRATE {1000, 1000, 500, 100}   // set the speeds for manual moves (mm/min)
 
 #define Z_AXIS_ALWAYS_ON 1
 
@@ -88,7 +89,7 @@ EXTRUDER SETTINGS
 // Mintemps
 #define HEATER_0_MINTEMP 15
 #define HEATER_1_MINTEMP 5
-#define HEATER_2_MINTEMP 5
+#define HEATER_2_MINTEMP -1
 #define BED_MINTEMP 15
 
 // Maxtemps
