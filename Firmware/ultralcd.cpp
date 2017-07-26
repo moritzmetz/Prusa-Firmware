@@ -215,14 +215,14 @@ static void menu_action_setting_edit_callback_long5(const char* pstr, unsigned l
 
 #if !defined(LCD_I2C_VIKI)
 #ifndef ENCODER_STEPS_PER_MENU_ITEM
-#define ENCODER_STEPS_PER_MENU_ITEM 5
+#define ENCODER_STEPS_PER_MENU_ITEM 1
 #endif
 #ifndef ENCODER_PULSES_PER_STEP
 #define ENCODER_PULSES_PER_STEP 1
 #endif
 #else
 #ifndef ENCODER_STEPS_PER_MENU_ITEM
-#define ENCODER_STEPS_PER_MENU_ITEM 2 // VIKI LCD rotary encoder uses a different number of steps per rotation
+#define ENCODER_STEPS_PER_MENU_ITEM 1 // VIKI LCD rotary encoder uses a different number of steps per rotation
 #endif
 #ifndef ENCODER_PULSES_PER_STEP
 #define ENCODER_PULSES_PER_STEP 1

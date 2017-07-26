@@ -339,29 +339,32 @@
   #define X_STEP_PIN 25
   #define X_DIR_PIN 23
   #define X_MIN_PIN 22
-  #define X_MAX_PIN 24
+  #define X_MAX_PIN -1 //24
   #define X_ENABLE_PIN 27
-  #define X_MS1_PIN -1
-  #define X_MS2_PIN -1
   #define Y_STEP_PIN 31
   #define Y_DIR_PIN 33
   #define Y_MIN_PIN 26
-  #define Y_MAX_PIN 28
+  #define Y_MAX_PIN -1 //28
   #define Y_ENABLE_PIN 29
-  #define Y_MS1_PIN -1
-  #define Y_MS2_PIN -1
   #define Z_STEP_PIN 37
   #define Z_DIR_PIN 39
-  #define Z_MIN_PIN 30
-  #define Z_MAX_PIN 32
+  #define Z_MIN_PIN 11 //30
+  #define Z_MAX_PIN -1 //32
   #define Z_ENABLE_PIN 35
-  #define Z_MS1_PIN -1
-  #define Z_MS2_PIN -1
+  #define Z2_STEP_PIN        49
+  #define Z2_DIR_PIN         47
+  #define Z2_ENABLE_PIN      48
+  #define E0_STEP_PIN         43
+  #define E0_DIR_PIN          45
+  #define E0_ENABLE_PIN       41
+
+
   #define TEMP_BED_PIN 10
   #define TEMP_0_PIN 8
   #define HEATER_1_PIN 3
   #define TEMP_1_PIN 9
   #define TEMP_2_PIN -1
+  #define SERVO0_PIN -1 //11
   
   // The SDSS pin uses a different pin mapping from file Sd2PinMap.h
 #define SDSS               53
@@ -369,8 +372,8 @@
 #ifndef SDSUPPORT
 // these pins are defined in the SD library if building with SD support
   #define SCK_PIN           52 //?
-  #define MISO_PIN         50 //?
-  #define MOSI_PIN         51 //?
+  #define MISO_PIN         50
+  #define MOSI_PIN         51
 #endif
   
     #define BEEPER 18
@@ -379,23 +382,18 @@
         #define BTN_EN2 40
         #define BTN_ENC 19
 
-        #define SDCARDDETECT -1
-        
-        #define LCD_PINS_RS 16
-        #define LCD_PINS_ENABLE 5
-        #define LCD_PINS_D4 6
+        #define SDCARDDETECT 38
+    
+        #define LCD_PINS_RS 20 //oder 16?
+        #define LCD_PINS_ENABLE 17 // geraten
+        #define LCD_PINS_D4 16
         #define LCD_PINS_D5 21
-        #define LCD_PINS_D6 20
-        #define LCD_PINS_D7 19
+        #define LCD_PINS_D6 5
+        #define LCD_PINS_D7 6
   
   
-  
-  #define E0_STEP_PIN         43
-  #define E0_DIR_PIN          45
-  #define E0_ENABLE_PIN       41
-  #define E0_MS1_PIN -1 //?
-  #define E0_MS2_PIN -1 //?
-  #define LED_PIN            13
+
+  #define LED_PIN             13
   #ifdef THREEMM_PRINTER
       #define FAN_PIN            7
   #else
