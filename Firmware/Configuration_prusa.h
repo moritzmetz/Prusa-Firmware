@@ -24,7 +24,7 @@ AXIS SETTINGS
 *------------------------------------*/
 
 // Steps per unit {X,Y,Z,E}
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,161.3}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {100, 100, 3200/8, 161.3} // Alle auf 1/16 steps.
 
 // Endstop inverting
 const bool X_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
@@ -37,7 +37,7 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define MANUAL_Z_HOME_POS 0.15
 
 // Travel limits after homing
-#define X_MAX_POS 255
+#define X_MAX_POS 250
 #define X_MIN_POS 0
 #define Y_MAX_POS 210
 #define Y_MIN_POS -2.2
@@ -49,16 +49,16 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define Y_CANCEL_POS 190
 
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {500, 500, 200, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {3000, 3000, 800, 0}  // set the homing speeds (mm/min)
 
 #define DEFAULT_MAX_FEEDRATE          {100, 100, 12, 120}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {5000,5000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {5000,5000,50,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          1500    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1500   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 
-#define MANUAL_FEEDRATE {500, 500, 200, 100}   // set the speeds for manual moves (mm/min)
+#define MANUAL_FEEDRATE {3000, 3000, 1000, 100}   // set the speeds for manual moves (mm/min)
 
 #define Z_AXIS_ALWAYS_ON 1
 
@@ -87,7 +87,7 @@ EXTRUDER SETTINGS
 #define EXTRUDE_MINTEMP 130
 
 // Extruder cooling fans
-#define EXTRUDER_0_AUTO_FAN_PIN   8
+#define EXTRUDER_0_AUTO_FAN_PIN   7
 #define EXTRUDER_1_AUTO_FAN_PIN   -1
 #define EXTRUDER_2_AUTO_FAN_PIN   -1
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
@@ -248,7 +248,7 @@ PREHEAT SETTINGS
 #define PLA_PREHEAT_HPB_TEMP 55
 #define PLA_PREHEAT_FAN_SPEED 0
 
-#define ABS_PREHEAT_HOTEND_TEMP 255
+#define ABS_PREHEAT_HOTEND_TEMP 240
 #define ABS_PREHEAT_HPB_TEMP 100
 #define ABS_PREHEAT_FAN_SPEED 0
 

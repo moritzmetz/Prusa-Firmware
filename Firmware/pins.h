@@ -351,44 +351,41 @@
   #define MISO_PIN         50
   #define MOSI_PIN         51
 #endif
+
+
+#define BEEPER 18
+
+#define BTN_EN1 42
+#define BTN_EN2 40
+#define BTN_ENC 19
+
+#define SDCARDDETECT 38
+
+#define LCD_PINS_RS 20 //oder 16?
+#define LCD_PINS_ENABLE 17 // geraten
+#define LCD_PINS_D4 16
+#define LCD_PINS_D5 21
+#define LCD_PINS_D6 5
+#define LCD_PINS_D7 6
+
+#define LED_PIN             13
   
-    #define BEEPER 18
+#define FAN_PIN             34 // pseudopin
+#define FAN_1_PIN           -1
 
-        #define BTN_EN1 42
-        #define BTN_EN2 40
-        #define BTN_ENC 19
+#define KILL_PIN           -1 //80 with Smart Controller LCD
+#define SUICIDE_PIN        54  //PIN that has to be turned on right after start, to keep power flowing.
+#define SDPOWER            -1
+#define HEATER_2_PIN -1
 
-        #define SDCARDDETECT 38
-    
-        #define LCD_PINS_RS 20 //oder 16?
-        #define LCD_PINS_ENABLE 17 // geraten
-        #define LCD_PINS_D4 16
-        #define LCD_PINS_D5 21
-        #define LCD_PINS_D6 5
-        #define LCD_PINS_D7 6
-  
-  
-
-  #define LED_PIN             13
-  #ifdef THREEMM_PRINTER
-      #define FAN_PIN            7
-  #else
-      #define FAN_PIN            7
-  #endif
-  #define KILL_PIN           -1 //80 with Smart Controller LCD
-  #define SUICIDE_PIN        54  //PIN that has to be turned on right after start, to keep power flowing.
-  #define SDPOWER            -1
-  #define HEATER_2_PIN -1
-
-    #define HEATER_0_PIN 2
-    #define HEATER_BED_PIN 4
-    #define FAN_1_PIN -1 
-    #define PS_ON_PIN 12
-    //#define MOTOR_CURRENT_PWM_XY_PIN -1
-    //#define MOTOR_CURRENT_PWM_Z_PIN  -1
-    //#define MOTOR_CURRENT_PWM_E_PIN -1
-    #define DEFAULT_PWM_MOTOR_CURRENT  {270, 830, 450} // {XY,Z,E}
-    #define DEFAULT_PWM_MOTOR_CURRENT_LOUD  {540, 830, 500} // {XY,Z,E}
+#define HEATER_0_PIN 2
+#define HEATER_BED_PIN 4
+#define PS_ON_PIN 12
+//#define MOTOR_CURRENT_PWM_XY_PIN -1
+//#define MOTOR_CURRENT_PWM_Z_PIN  -1
+//#define MOTOR_CURRENT_PWM_E_PIN -1
+#define DEFAULT_PWM_MOTOR_CURRENT  {270, 830, 450} // {XY,Z,E}
+#define DEFAULT_PWM_MOTOR_CURRENT_LOUD  {540, 830, 500} // {XY,Z,E}
 
 #endif
 
