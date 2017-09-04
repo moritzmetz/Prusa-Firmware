@@ -63,7 +63,7 @@
   #define TEMP_1_PIN 1
   #define TEMP_2_PIN -1
   
-#ifdef SNMM 
+#ifdef SNMM
 
 #define E_MUX0_PIN 17
 #define E_MUX1_PIN 16
@@ -71,7 +71,7 @@
 
 
 #endif
- 
+
 #ifdef DIS
 #define D_REQUIRE 30
 #define D_DATA 20
@@ -365,7 +365,7 @@
   #define TEMP_1_PIN 9
   #define TEMP_2_PIN -1
   #define SERVO0_PIN -1 //11
-  
+
   // The SDSS pin uses a different pin mapping from file Sd2PinMap.h
 #define SDSS               53
 
@@ -375,7 +375,7 @@
   #define MISO_PIN         50
   #define MOSI_PIN         51
 #endif
-  
+
     #define BEEPER 18
 
         #define BTN_EN1 42
@@ -383,15 +383,15 @@
         #define BTN_ENC 19
 
         #define SDCARDDETECT 38
-    
+
         #define LCD_PINS_RS 20 //oder 16?
         #define LCD_PINS_ENABLE 17 // geraten
         #define LCD_PINS_D4 16
         #define LCD_PINS_D5 21
         #define LCD_PINS_D6 5
         #define LCD_PINS_D7 6
-  
-  
+
+
 
   #define LED_PIN             13
   #ifdef THREEMM_PRINTER
@@ -406,7 +406,7 @@
 
     #define HEATER_0_PIN 2
     #define HEATER_BED_PIN 4
-    #define FAN_1_PIN -1 
+    #define FAN_1_PIN -1
     #define PS_ON_PIN 12
     //#define MOTOR_CURRENT_PWM_XY_PIN -1
     //#define MOTOR_CURRENT_PWM_Z_PIN  -1
@@ -416,7 +416,103 @@
 
 #endif
 
+/*****************************************************************
+* Geetech GT2560 A+ Definitions
+******************************************************************/
+#if MOTHERBOARD == 256
+  #define ELECTRONICS "BOARD_GT2560_REV_A"
+  #define KNOWN_BOARD
+  #ifndef __AVR_ATmega2560__
+    #error Oops!  Make sure you have 'Arduino Mega 2560' selected from the 'Tools -> Boards' menu.
+  #endif
 
+  #define FR_SENS -1
+
+#ifdef SNMM
+
+#define E_MUX0_PIN 17
+#define E_MUX1_PIN 16
+#define E_MUX2_PIN 84
+
+
+#endif
+  #define LARGE_FLASH true
+  #define X_STEP_PIN 25
+  #define X_DIR_PIN 23
+  #define X_MIN_PIN 22
+  #define X_MAX_PIN -1 //24
+  #define X_ENABLE_PIN 27
+  #define Y_STEP_PIN 31
+  #define Y_DIR_PIN 33
+  #define Y_MIN_PIN 26
+  #define Y_MAX_PIN -1 //28
+  #define Y_ENABLE_PIN 29
+  #define Z_STEP_PIN 37
+  #define Z_DIR_PIN 39
+  #define Z_MIN_PIN 11 //30
+  #define Z_MAX_PIN -1 //32
+  #define Z_ENABLE_PIN 35
+  #define Z2_STEP_PIN        49
+  #define Z2_DIR_PIN         47
+  #define Z2_ENABLE_PIN      48
+  #define E0_STEP_PIN         43
+  #define E0_DIR_PIN          45
+  #define E0_ENABLE_PIN       41
+
+
+  #define TEMP_BED_PIN 10
+  #define TEMP_0_PIN 8
+  #define HEATER_1_PIN 3
+  #define TEMP_1_PIN 9
+  #define TEMP_2_PIN -1
+  #define SERVO0_PIN -1 //11
+
+  // The SDSS pin uses a different pin mapping from file Sd2PinMap.h
+#define SDSS               53
+
+#ifndef SDSUPPORT
+// these pins are defined in the SD library if building with SD support
+  #define SCK_PIN           52 //?
+  #define MISO_PIN         50
+  #define MOSI_PIN         51
+#endif
+
+
+#define BEEPER 18
+
+#define BTN_EN1 42
+#define BTN_EN2 40
+#define BTN_ENC 19
+
+#define SDCARDDETECT 38
+
+#define LCD_PINS_RS 20 //oder 16?
+#define LCD_PINS_ENABLE 17 // geraten
+#define LCD_PINS_D4 16
+#define LCD_PINS_D5 21
+#define LCD_PINS_D6 5
+#define LCD_PINS_D7 6
+
+#define LED_PIN             13
+
+#define FAN_PIN             34 // pseudopin
+#define FAN_1_PIN           -1
+
+#define KILL_PIN           -1 //80 with Smart Controller LCD
+#define SUICIDE_PIN        54  //PIN that has to be turned on right after start, to keep power flowing.
+#define SDPOWER            -1
+#define HEATER_2_PIN -1
+
+#define HEATER_0_PIN 2
+#define HEATER_BED_PIN 4
+#define PS_ON_PIN 12
+//#define MOTOR_CURRENT_PWM_XY_PIN -1
+//#define MOTOR_CURRENT_PWM_Z_PIN  -1
+//#define MOTOR_CURRENT_PWM_E_PIN -1
+#define DEFAULT_PWM_MOTOR_CURRENT  {270, 830, 450} // {XY,Z,E}
+#define DEFAULT_PWM_MOTOR_CURRENT_LOUD  {540, 830, 500} // {XY,Z,E}
+
+#endif
 
 #ifndef KNOWN_BOARD
 #error Unknown MOTHERBOARD value in configuration.h

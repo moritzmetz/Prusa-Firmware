@@ -33,13 +33,7 @@ AXIS SETTINGS
 *------------------------------------*/
 
 // Steps per unit {X,Y,Z,E}
-#ifdef SNMM
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,140}
-#else
-//so war es #define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,161.3}
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,161.3}
-#endif
-
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {100, 100, 3200/8, 145.3} // Alle auf 1/16 steps.
 
 // Endstop inverting
 const bool X_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
@@ -77,8 +71,7 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define DEFAULT_ACCELERATION          1500    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1500   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
-
-#define MANUAL_FEEDRATE {1000, 1000, 500, 100}   // set the speeds for manual moves (mm/min)
+#define MANUAL_FEEDRATE {3000, 3000, 1000, 100}   // set the speeds for manual moves (mm/min)
 
 #define Z_AXIS_ALWAYS_ON 1
 
@@ -118,8 +111,8 @@ EXTRUDER SETTINGS
 #define EXTRUDE_MINTEMP 130
 
 // Extruder cooling fans
-#define EXTRUDER_0_AUTO_FAN_PIN   8
-#define EXTRUDER_1_AUTO_FAN_PIN   -1
+#define EXTRUDER_0_AUTO_FAN_PIN   11 // fake pin
+#define EXTRUDER_1_AUTO_FAN_PIN   7
 #define EXTRUDER_2_AUTO_FAN_PIN   -1
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
 #define EXTRUDER_AUTO_FAN_SPEED   255  // == full speed
@@ -284,27 +277,27 @@ PREHEAT SETTINGS
 
 #define PLA_PREHEAT_HOTEND_TEMP 215
 #define PLA_PREHEAT_HPB_TEMP 55
-#define PLA_PREHEAT_FAN_SPEED 0  
+#define PLA_PREHEAT_FAN_SPEED 0
 
 #define ABS_PREHEAT_HOTEND_TEMP 255
 #define ABS_PREHEAT_HPB_TEMP 100
-#define ABS_PREHEAT_FAN_SPEED 0 
+#define ABS_PREHEAT_FAN_SPEED 0
 
 #define HIPS_PREHEAT_HOTEND_TEMP 220
 #define HIPS_PREHEAT_HPB_TEMP 100
-#define HIPS_PREHEAT_FAN_SPEED 0 
+#define HIPS_PREHEAT_FAN_SPEED 0
 
 #define PP_PREHEAT_HOTEND_TEMP 254
 #define PP_PREHEAT_HPB_TEMP 100
-#define PP_PREHEAT_FAN_SPEED 0 
+#define PP_PREHEAT_FAN_SPEED 0
 
 #define PET_PREHEAT_HOTEND_TEMP 240
 #define PET_PREHEAT_HPB_TEMP 90
-#define PET_PREHEAT_FAN_SPEED 0 
+#define PET_PREHEAT_FAN_SPEED 0
 
 #define FLEX_PREHEAT_HOTEND_TEMP 230
 #define FLEX_PREHEAT_HPB_TEMP 50
-#define FLEX_PREHEAT_FAN_SPEED 0 
+#define FLEX_PREHEAT_FAN_SPEED 0
 
 /*------------------------------------
 THERMISTORS SETTINGS
@@ -330,7 +323,8 @@ THERMISTORS SETTINGS
 // 10 is 100k RS thermistor 198-961 (4.7k pullup)
 // 11 is 100k beta 3950 1% thermistor (4.7k pullup)
 // 12 is 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup) (calibrated for Makibox hot bed)
-// 13 is 100k Hisens 3950  1% up to 300°C for hotend "Simple ONE " & "Hotend "All In ONE" 
+
+// 13 is 100k Hisens 3950  1% up to 300°C for hotend "Simple ONE " & "Hotend "All In ONE"
 // 20 is the PT100 circuit found in the Ultimainboard V2.x
 // 60 is 100k Maker's Tool Works Kapton Bed Thermistor beta=3950
 //
@@ -347,22 +341,10 @@ THERMISTORS SETTINGS
 // 247 is Pt100 with 4k7 pullup and PT100 Amplifier
 // 110 is Pt100 with 1k pullup (non standard)
 
-#if defined(E3D_PT100_EXTRUDER_WITH_AMP)
-#define TEMP_SENSOR_0 247
-#elif defined(E3D_PT100_EXTRUDER_NO_AMP)
-#define TEMP_SENSOR_0 148
-#else
 #define TEMP_SENSOR_0 5
-#endif
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
-#if defined(E3D_PT100_BED_WITH_AMP)
 #define TEMP_SENSOR_BED 11
-#elif defined(E3D_PT100_BED_NO_AMP)
-#define TEMP_SENSOR_BED 11
-#else
-#define TEMP_SENSOR_BED 11
-#endif
 
 #define STACK_GUARD_TEST_VALUE 0xA2A2
 
