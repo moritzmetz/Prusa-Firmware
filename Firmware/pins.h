@@ -370,7 +370,7 @@
 
 #define LED_PIN             13
   
-#define FAN_PIN             7 // pseudopin
+#define FAN_PIN             34 // pseudopin
 #define FAN_1_PIN           -1
 
 #define KILL_PIN           -1 //80 with Smart Controller LCD
