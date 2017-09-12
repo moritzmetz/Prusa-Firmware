@@ -449,7 +449,7 @@
   #define Y_ENABLE_PIN 29
   #define Z_STEP_PIN 37
   #define Z_DIR_PIN 39
-  #define Z_MIN_PIN 11 //30
+  #define Z_MIN_PIN 30 //was 11 for (now broken) pinda-port on gt2560a+
   #define Z_MAX_PIN -1 //32
   #define Z_ENABLE_PIN 35
   #define Z2_STEP_PIN        49
