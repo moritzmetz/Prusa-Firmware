@@ -276,10 +276,10 @@ PREHEAT SETTINGS
 *------------------------------------*/
 
 #define PLA_PREHEAT_HOTEND_TEMP 215
-#define PLA_PREHEAT_HPB_TEMP 55
+#define PLA_PREHEAT_HPB_TEMP 62
 #define PLA_PREHEAT_FAN_SPEED 0
 
-#define ABS_PREHEAT_HOTEND_TEMP 255
+#define ABS_PREHEAT_HOTEND_TEMP 240
 #define ABS_PREHEAT_HPB_TEMP 100
 #define ABS_PREHEAT_FAN_SPEED 0
 
@@ -370,7 +370,7 @@ THERMISTORS SETTINGS
 #define PING_TIME_LONG 600 //10 min; used when length of commands buffer > 0 to avoid false triggering when dealing with long gcodes
 #define PING_ALLERT_PERIOD 60 //time in s
 
-#define LONG_PRESS_TIME 1000 //time in ms for button long press 
+#define LONG_PRESS_TIME 1000 //time in ms for button long press
 #define BUTTON_BLANKING_TIME 200 //time in ms for blanking after button release
 
 #define DEFAULT_PID_TEMP 210
