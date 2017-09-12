@@ -31,7 +31,7 @@
 void lcd_mylang();
   bool lcd_detected(void);
 
-  
+
   static void lcd_selftest();
   static bool lcd_selfcheck_endstops();
   static bool lcd_selfcheck_axis(int _axis, int _travel);
@@ -44,7 +44,7 @@ void lcd_mylang();
   static bool lcd_selfcheck_pulleys(int axis);
 
   extern const char* lcd_display_message_fullscreen_P(const char *msg, uint8_t &nlines);
-  inline const char* lcd_display_message_fullscreen_P(const char *msg) 
+  inline const char* lcd_display_message_fullscreen_P(const char *msg)
     { uint8_t nlines; return lcd_display_message_fullscreen_P(msg, nlines); }
 
   extern void lcd_wait_for_click();
@@ -73,7 +73,7 @@ void lcd_mylang();
   #define LCD_ALERTMESSAGERPGM(x) lcd_setalertstatuspgm((x))
 
   #define LCD_UPDATE_INTERVAL 100
-  #define LCD_TIMEOUT_TO_STATUS 15000
+  #define LCD_TIMEOUT_TO_STATUS 180000 // 3 min
 
   #ifdef ULTIPANEL
   void lcd_buttons_update();
@@ -93,11 +93,11 @@ void lcd_mylang();
   #define LCD_COMMAND_FARM_MODE_CONFIRM 4
   #define LCD_COMMAND_LONG_PAUSE 5
   #define LCD_COMMAND_LONG_PAUSE_RESUME 6
-  #define LCD_COMMAND_PID_EXTRUDER 7 
+  #define LCD_COMMAND_PID_EXTRUDER 7
 
   extern unsigned long lcd_timeoutToStatus;
   extern int lcd_commands_type;
-  
+
   extern uint8_t farm_mode;
   extern int farm_no;
   extern int farm_timer;
@@ -109,17 +109,17 @@ void lcd_mylang();
 
   extern bool cancel_heatup;
   extern bool isPrintPaused;
-  
+
   #ifdef FILAMENT_LCD_DISPLAY
         extern unsigned long message_millis;
   #endif
-    
+
   void lcd_buzz(long duration,uint16_t freq);
   bool lcd_clicked();
 
   void lcd_ignore_click(bool b=true);
   void lcd_commands();
-  
+
   #ifdef NEWPANEL
     #define EN_C (1<<BLEN_C)
     #define EN_B (1<<BLEN_B)
@@ -155,12 +155,12 @@ void lcd_mylang();
     #define B_ST (1<<BL_ST)
     #define EN_B (1<<BLEN_B)
     #define EN_A (1<<BLEN_A)
-    
+
     #define LCD_CLICKED ((buttons&B_MI)||(buttons&B_ST))
   #endif//NEWPANEL
 
 #else //no LCD
-  FORCE_INLINE void 
+  FORCE_INLINE void
   {}
   FORCE_INLINE void lcd_init() {}
   FORCE_INLINE void lcd_setstatus(const char* message) {}
@@ -169,8 +169,8 @@ void lcd_mylang();
   FORCE_INLINE void lcd_buzz(long duration,uint16_t freq) {}
   FORCE_INLINE bool lcd_detected(void) { return true; }
 
-  #define LCD_MESSAGEPGM(x) 
-  #define LCD_ALERTMESSAGEPGM(x) 
+  #define LCD_MESSAGEPGM(x)
+  #define LCD_ALERTMESSAGEPGM(x)
 
 #endif //ULTRA_LCD
 
@@ -222,7 +222,7 @@ static void extr_unload_1();
 static void extr_unload_2();
 static void extr_unload_3();
 static void lcd_disable_farm_mode();
-void extr_unload_all(); 
+void extr_unload_all();
 void extr_unload_used();
 void extr_unload();
 static char snmm_stop_print_menu();
