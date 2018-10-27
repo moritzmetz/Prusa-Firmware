@@ -85,7 +85,8 @@
   #define LCD_COMMAND_FARM_MODE_CONFIRM 4
   #define LCD_COMMAND_LONG_PAUSE 5
   #define LCD_COMMAND_LONG_PAUSE_RESUME 6
-  #define LCD_COMMAND_PID_EXTRUDER 7 #define LCD_COMMAND_V2_CAL 8
+  #define LCD_COMMAND_PID_EXTRUDER 7
+  #define LCD_COMMAND_V2_CAL 8
 
   extern unsigned long lcd_timeoutToStatus;
   extern int lcd_commands_type;

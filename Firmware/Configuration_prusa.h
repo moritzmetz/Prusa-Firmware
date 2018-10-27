@@ -111,8 +111,8 @@ EXTRUDER SETTINGS
 #define EXTRUDE_MINTEMP 130
 
 // Extruder cooling fans
-#define EXTRUDER_0_AUTO_FAN_PIN   16
-#define EXTRUDER_1_AUTO_FAN_PIN   7
+#define EXTRUDER_0_AUTO_FAN_PIN   11 // fake pin
+#define EXTRUDER_1_AUTO_FAN_PIN   -1
 #define EXTRUDER_2_AUTO_FAN_PIN   -1
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
 #define EXTRUDER_AUTO_FAN_SPEED   255  // == full speed
@@ -184,10 +184,12 @@ MOTOR CURRENT SETTINGS
 #define DIGIPOT_MOTOR_CURRENT_LOUD {135,135,135,135,135}
 
 // Motor Current settings for RAMBo mini PWM value = MotorCurrentSetting * 255 / range
-#if MOTHERBOARD == 102 || MOTHERBOARD == 302
+#if MOTHERBOARD == 102 || MOTHERBOARD == 302 || MOTHERBOARD == 256
 #define MOTOR_CURRENT_PWM_RANGE 2000
 #define DEFAULT_PWM_MOTOR_CURRENT  {270, 830, 450} // {XY,Z,E}
 #define DEFAULT_PWM_MOTOR_CURRENT_LOUD  {540, 830, 500} // {XY,Z,E}
+#define Z_SILENT 0
+#define Z_HIGH_POWER 200
 #endif
 
 /*------------------------------------
@@ -280,7 +282,7 @@ PREHEAT SETTINGS
 #define PLA_PREHEAT_FAN_SPEED 0
 
 #define ABS_PREHEAT_HOTEND_TEMP 240
-#define ABS_PREHEAT_HPB_TEMP 100
+#define ABS_PREHEAT_HPB_TEMP 110
 #define ABS_PREHEAT_FAN_SPEED 0
 
 #define HIPS_PREHEAT_HOTEND_TEMP 220
@@ -368,7 +370,9 @@ THERMISTORS SETTINGS
 
 #define PING_TIME 60 //time in s
 #define PING_TIME_LONG 600 //10 min; used when length of commands buffer > 0 to avoid false triggering when dealing with long gcodes
-#define PING_ALLERT_PERIOD 60 //time in s
+#define PING_ALERT_PERIOD 60 //time in s
+#define NC_TIME 10 //time in s for periodic important status messages sending which needs reponse from monitoring
+#define NC_BUTTON_LONG_PRESS 15 //time in s
 
 #define LONG_PRESS_TIME 1000 //time in ms for button long press
 #define BUTTON_BLANKING_TIME 200 //time in ms for blanking after button release
@@ -379,6 +383,12 @@ THERMISTORS SETTINGS
 #define DEFAULT_RETRACTION 4 //used for PINDA temp calibration and pause print
 #else
 #define DEFAULT_RETRACTION 1 //used for PINDA temp calibration and pause print
+#endif
+
+#define END_FILE_SECTION 10000 //number of bytes from end of file used for checking if file is complete
+
+#ifndef SNMM
+#define SUPPORT_VERBOSITY
 #endif
 
 #endif //__CONFIGURATION_PRUSA_H

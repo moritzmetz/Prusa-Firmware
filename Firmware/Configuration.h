@@ -70,7 +70,7 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 
-//#define STRING_VERSION "1.0.2"
+#define STRING_VERSION "3.1.0"
 
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
 #define STRING_CONFIG_H_AUTHOR "(METZWERK)" // Who made the changes.
